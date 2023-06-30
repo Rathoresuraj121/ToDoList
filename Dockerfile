@@ -7,7 +7,7 @@ RUN npm run build
 
 #stage 2
 FROM nginx:latest
-COPY dist/to-do-list /usr/share/nginx/html
+COPY /dist/to-do-list /usr/share/nginx/html
 
 #80
 
