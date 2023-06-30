@@ -1,6 +1,6 @@
 #stage 1
 FROM node:latest
-WORKDIR /usr/src/app
+WORKDIR /app
 COPY . .
 RUN npm install
 RUN npm run build
