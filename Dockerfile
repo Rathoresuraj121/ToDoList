@@ -1,13 +1,13 @@
 #stage 1
-FROM node:latest
-#WORKDIR /app
+FROM node:latest as build
+WORKDIR /usr/src/app
 COPY . .
 RUN npm install
 RUN npm run build
 
 #stage 2
 FROM nginx:latest
-COPY /dist/to-do-list /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/to-do-list /usr/share/nginx/html
 
 #80
 
