@@ -9,6 +9,5 @@ RUN npm run build
 FROM nginx:latest
 COPY --from=build /usr/src/app/dist/to-do-list /usr/share/nginx/html
 
-#80
 
 
